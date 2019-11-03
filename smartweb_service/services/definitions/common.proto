@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package common;
+
+// The common service definition.
+service Common {
+  rpc GenerateAPIRequest (ApiRequest) returns (ApiResponse) {}
+}
+
+// The request message containing a string.
+message ApiRequest {
+  string name = 1;
+}
+
+// The response message contains the API Key
+message ApiResponse {
+  string message = 1;
+}
