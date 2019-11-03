@@ -3,12 +3,12 @@ import logging
 
 import grpc
 
-import common_pb2
-import common_pb2_grpc
+from smartweb_service.services.stubs import common_pb2
+import smartweb_service.services.stubs.common_pb2_grpc
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    helloworld_pb2_grpc.add_GreeterServicer_to_server(Greeter(), server)
+    common_pb2_grpc.add_CommonServicer_to_server(Common(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
     server.wait_for_termination()

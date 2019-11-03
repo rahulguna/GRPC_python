@@ -3,7 +3,7 @@ import logging
 
 import grpc
 
-import smartweb_service.services.stubs.common_pb2
+from smartweb_service.services.stubs import common_pb2
 import smartweb_service.services.stubs.common_pb2_grpc
 
 
