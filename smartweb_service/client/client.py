@@ -4,8 +4,7 @@ import logging
 import grpc
 
 from smartweb_service.services.stubs import common_pb2
-import smartweb_service.services.stubs.common_pb2_grpc
-
+from smartweb_service.services.stubs import common_pb2_grpc
 
 def run():
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
