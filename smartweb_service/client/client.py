@@ -5,6 +5,8 @@ import grpc
 
 from smartweb_service.services.stubs import common_pb2
 from smartweb_service.services.stubs import common_pb2_grpc
+from smartweb_service.services.stubs import did_pb2
+from smartweb_service.services.stubs import did_pb2_grpc
 
 def run():
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
@@ -13,7 +15,12 @@ def run():
     with grpc.insecure_channel('localhost:50051') as channel:
         stub = common_pb2_grpc.CommonStub(channel)
         response = stub.GenerateAPIRequest(common_pb2.ApiRequest(name='hey'))
-    print("SmartWeb client received: " + response.message)
+
+        stub = did_pb2_grpc.DidStub(channel)
+        response1 = stub.Sign(did_pb2.ApiRequest(api_key='shguBwHIVO2ziKMQi3EkHDP9V4JJb5GN', private_key='shguBwHIVO2ziKMQi3EkHDP9V4JJb5GN', message='hey'))
+    
+    print("SmartWeb client received: "+response.message)
+    print("SmartWeb client received: ",response1.status)
 
 
 if __name__ == '__main__':
