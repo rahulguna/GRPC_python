@@ -3,11 +3,10 @@ import string
 
 import grpc
 
-from smartweb_service.services.database import (
-        connection as db)
-from smartweb_service.services.stubs import common_pb2
-from smartweb_service.services.stubs import common_pb2_grpc
-from smartweb_service.services.database.user_api_relation import UserApiRelation
+from grpc_adenine.database import (connection as db)
+from grpc_adenine.stubs import common_pb2
+from grpc_adenine.stubs import common_pb2_grpc
+from grpc_adenine.database.user_api_relation import UserApiRelation
 
 class Common(common_pb2_grpc.CommonServicer):
 

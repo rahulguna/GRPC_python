@@ -1,4 +1,4 @@
-from smartweb_service import settings
+from grpc_adenine import settings
 from sqlalchemy_wrapper import SQLAlchemy
 
 # Connect to the database
