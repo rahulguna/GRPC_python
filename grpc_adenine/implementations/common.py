@@ -15,6 +15,5 @@ class Common(common_pb2_grpc.CommonServicer):
 		stringLength = 32
 		api_key = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(stringLength))
 		user_api_rel = db.query(UserApiRelation).get('1')
-		str1 = 'Generated Key: ' + api_key +' \nFrom Database: '+ user_api_rel.api_key
-		return common_pb2.ApiResponse(message='Hey! \n%s' % str1)
+		return common_pb2.ApiResponse(api_key=api_key, status_message=user_api_rel.api_key, status=200)
 

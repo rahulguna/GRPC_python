@@ -4,7 +4,7 @@
 
 from datetime import datetime
 
-from smartweb_service.services.database import db
+from grpc_adenine.database import (connection as db)
 from sqlalchemy import ForeignKey
 
 """

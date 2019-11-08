@@ -8,13 +8,13 @@ import json
 
 import grpc
 
-from implementations.common import Common
-from smartweb_service.services.stubs import common_pb2
-from smartweb_service.services.stubs import common_pb2_grpc
+from grpc_adenine.implementations.common import Common
+from grpc_adenine.stubs import common_pb2
+from grpc_adenine.stubs import common_pb2_grpc
 
-from implementations.did_sidechain import Did
-from smartweb_service.services.stubs import did_pb2
-from smartweb_service.services.stubs import did_pb2_grpc
+from grpc_adenine.implementations.did_sidechain import Did
+from grpc_adenine.stubs import did_pb2
+from grpc_adenine.stubs import did_pb2_grpc
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))

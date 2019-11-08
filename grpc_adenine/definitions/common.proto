@@ -9,10 +9,13 @@ service Common {
 
 // The request message containing a string.
 message ApiRequest {
-  string name = 1;
+  string secret_key = 1;
+  string did = 2;
 }
 
 // The response message contains the API Key
 message ApiResponse {
-  string message = 1;
+  string api_key = 1;
+  string status_message = 2;
+  int32 status = 3;
 }
