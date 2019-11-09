@@ -1,8 +1,7 @@
 import datetime
 import pytz
-from smartweb_service.services.database import (
-        connection as db)
-from smartweb_service.services.database.user_api_relation import UserApiRelation
+from grpc_adenine.database import (connection as db)
+from grpc_adenine.database.user_api_relation import UserApiRelation
 
 def validate_api_key(api_key):
 	user_api_rel = UserApiRelation.query.filter(UserApiRelation.api_key == api_key).first()
