@@ -1,0 +1,4 @@
+grpcio
+grpcio-tools
+sqlalchemy_wrapper
+requests
