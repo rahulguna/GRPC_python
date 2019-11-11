@@ -24,7 +24,7 @@ cd elastos-smartweb-service
 
 Export Path:
 ```
-export PYTHONPATH="$PYTHONPATH:/Users/rahulguna/GIT/elastos-smartweb-service/"
+export PYTHONPATH="$PYTHONPATH:/Users/*your_username*/elastos-smartweb-service/"
 ```
 
 To get the API service running, run the following terminal commands:
