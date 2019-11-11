@@ -7,6 +7,7 @@ from grpc_adenine.database import (connection as db)
 from grpc_adenine.stubs import common_pb2
 from grpc_adenine.stubs import common_pb2_grpc
 from grpc_adenine.database.user_api_relation import UserApiRelation
+from sqlalchemy.sql import exists
 
 class Common(common_pb2_grpc.CommonServicer):
 
@@ -14,8 +15,8 @@ class Common(common_pb2_grpc.CommonServicer):
 		stringLength = 32
 		secret_key = os.environ['SHARED_SECRET_ADENINE']
 
-		user_api_rel = db.query(UserApiRelation).get('1')
-
+		print db.query(exists().where(UserApiRelation.api_key == 'KHBOsth7b3WbOTVzZqGUEhOY8rPreYFM')).scalar()
+	
 		if(secret_key==request.secret_key):
 			api_key = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(stringLength))
 			return common_pb2.ApiResponse(api_key=api_key, status_message='Success', status=200)
